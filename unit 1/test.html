@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSS Border, Padding & Content Example</title>
+  <style>
+    .box {
+      width: 200px;               /* Content width */
+      height: 100px;              /* Content height */
+      padding: 20px;              /* Padding inside the box */
+      border: 2px solid black;    /* Border thickness, style, and color */
+      background-color: lightyellow; /* Background extends to padding */
+      box-sizing: content-box;   /* Default box-sizing */
+      position: relative;
+      font-weight: bold;
+      text-align: center;
+      color: black;
+      font-size: 18px;
+      line-height: 60px;          /* Vertically center content */
+    }
+    /* Overlay to highlight content area */
+    .box span.content {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 165, 0, 0.3); /* Semi-transparent orange */
+      box-sizing: border-box;
+      line-height: 60px;
+    }
+    /* Label the padding area */
+    .box::before {
+      content: "Padding Area";
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      font-size: 12px;
+      font-style: italic;
+      color: darkorange;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <span class="content">Content Area</span>
+  </div>
+</body>
+</html>
